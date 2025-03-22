@@ -1,0 +1,17 @@
+div{
+    background-color: #A00000;
+    width: 335px;
+    height: 65px;
+}
+
+.information{
+    font-size: 40px; 
+    color: white;
+    padding-left: 10px;
+}
+
+.system{
+    font-size:40px; 
+    color: black; 
+    vertical-align: -9px;
+}

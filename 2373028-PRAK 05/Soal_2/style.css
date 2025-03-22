@@ -1,0 +1,46 @@
+.size{
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.red-left{
+    background-image: url(circle-red.png);
+    margin-left: 20px;
+    z-index: 1;
+    position: absolute;
+    padding: 2px;
+}
+
+.red-right{
+    background-image: url(circle-red.png);
+    margin-left: 140px;
+    z-index: 1;
+    position: absolute;
+    padding: 2px;
+}
+
+.purple{
+    background-image: url(circle-purple.png);
+    margin-left: 80px;
+    z-index: 2;
+    position: absolute;
+    padding: 2px;
+}
+
+.half-red-right{
+    background-image: url(circle-red-half.png);
+    margin-left: 140px;
+    z-index: 3;
+    position: absolute;
+    padding: 2px;
+}
+
+.half-red-left{
+    background-image: url(circle-red-half.png);
+    margin-left: 20px;
+    z-index: 3;
+    position: absolute;
+    padding: 2px;
+}

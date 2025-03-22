@@ -1,0 +1,41 @@
+div{
+    margin: 5px;
+}
+
+.red{
+    width: 880px;
+    height: 100px;
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+    width: 150px;
+    height: 270px;
+    float: left;
+}
+
+.content{
+    background-color: green;
+    width: 700px;
+    height: 420px;
+    position: relative;
+    top: -5px;
+    margin-left: 160px;
+    color: black;
+    display: flex;
+    padding: 10px;
+    font-size: 25px;
+    word-spacing:5px;
+}
+
+.yellow{
+    background-color: yellow;
+    height: 190px;
+    width: 190px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    clear : both;
+    float: right;
+}

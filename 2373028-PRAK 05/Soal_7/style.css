@@ -1,0 +1,88 @@
+div.logoZoo{
+    width: 120px;
+    height: 100px;
+    background: url(logo_zoo.png) no-repeat;
+    background-size: contain;
+}
+
+div.kotakKuning{
+    width: 340px;
+    height: 100px;
+    margin-left: 120px;
+    background-color: yellow;
+    text-align: center;
+    vertical-align: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px
+}
+
+div.lion{
+    background:url(lion.png);
+    width: 160px;
+    height: 100px;
+    margin-left: 500px;
+    position: absolute;
+}
+
+div.sea{
+    background: url(bg_sea.png);
+    width: 120px;
+    height: 610px;
+    position: absolute;
+}
+
+div.content{
+    width: 500px;
+    height: 590px;
+    position: relative;
+    top: -130px;
+    margin-left: 120px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: #4169E1;
+}
+
+div.footer{
+    background-color: #4169E1;
+    width: 500px;
+    height: 20px;
+    text-align: right;
+    position: relative;
+    top: -147px;
+    margin-left: 120px;
+}
+
+div.elephant{
+    background: url(elephant.png);
+    height: 150px;
+    width: 200px;
+    float: right
+}
+
+div.caption{
+    background-color:  #4169E1;
+    width: 200px;
+    color: white;
+    margin-top: 155px;
+    font-size: small;
+    text-align: center;
+}
+
+li{
+    text-decoration: underline;
+    list-style-type: none;
+    color: white; 
+}
+
+.sea ul {
+    padding: 0;
+    text-align: center;
+}
+
+.sea li {
+    text-align: center;
+    display: block;
+}
