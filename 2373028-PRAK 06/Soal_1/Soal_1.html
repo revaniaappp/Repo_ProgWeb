@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td{
+            border: 1px solid black;
+            padding: 0;
+            margin: 0;
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .input{
+            width: 75px;
+        }
+    </style>
+
+    <script>
+        function tampilHasil(){
+            let angka1 = document.form1.inputAngka1.value;
+            let angka2 = document.form1.inputAngka2.value;
+
+            angka1 = parseInt(angka1);
+            angka2 = parseInt(angka2);
+
+            let hasilPlus = angka1 + angka2;
+            let hasilMinus = angka1 - angka2;
+
+            if(isNaN(angka1) && isNaN(angka2)){
+                alert("angka pertama dan kedua harus angka.");
+                return;
+            }else if(isNaN(angka1)){
+                alert("angka pertama bukan angka.");
+                return;
+            }else if(isNaN(angka2)){
+                alert("angka kedua harus angka.");
+                return;
+            }
+
+            document.getElementById("hasilPlus").innerHTML = hasilPlus;
+            document.getElementById("hasilMinus").innerHTML = hasilMinus;
+
+            document.getElementById("result1_plus").innerHTML = angka1;
+            document.getElementById("result2_plus").innerHTML = angka2;
+            document.getElementById("result1_minus").innerHTML = angka1;
+            document.getElementById("result2_minus").innerHTML = angka2;
+        }
+
+        function doInput(){
+            let teks = document.querySelector("#inputAngka1").value;
+            if(!isNaN(teks)){
+                document.getElementById("result1_plus").innerHTML = teks;
+                document.getElementById("result1_minus").innerHTML = teks;
+            } else{
+                document.getElementById("result1_plus").innerHTML = '';
+                document.getElementById("result1_minus").innerHTML = '';
+            }
+        }
+
+        function doInput2(){
+            let teks2 = document.querySelector("#inputAngka2").value;
+            if(!isNaN(teks2)){
+               document.getElementById("result2_plus").innerHTML = teks2;
+               document.getElementById("result2_minus").innerHTML = teks2;
+            }else{
+               document.getElementById("result2_plus").innerHTML = '';
+               document.getElementById("result2_minus").innerHTML = '';
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="form1">
+        
+        <label for="angkaPertama">Angka Pertama :</label>
+        <input class="input" type="text" name="angka1" id="inputAngka1" onchange="doInput()"><br>
+
+        <label for="angkaPertama">Angka Kedua&nbsp;&nbsp&nbsp;&nbsp:</label>
+        <input class="input" type="text" name="angka2" id="inputAngka2" onchange="doInput2()"><br>
+
+        <input type="button" name="Count" value="Count" onclick="tampilHasil()">
+
+        <table>
+            <tr>
+                <td id="result1_plus"></td>
+                <td>+</td>
+                <td id="result2_plus"></td>
+                <td>=</td>
+                <td id="hasilPlus"></td>
+            </tr>
+            <tr>
+                <td id="result1_minus"></td>
+                <td>-</td>
+                <td id="result2_minus"></td>
+                <td>=</td>
+                <td id="hasilMinus"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

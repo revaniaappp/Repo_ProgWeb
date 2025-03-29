@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .kotakInput{
+            border: 1px solid lightgrey;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .kotakPyramid{
+            border: 1px solid lightgray;
+            padding: 20px;
+            width: 800px;
+            height: 600px;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .selPyramid{
+            background-color: orange;
+            border: 1px solid white;
+            text-align: center;
+        }
+        table{
+            border-collapse: collapse;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="kotakInput">
+        <label for="tinggiPyramid">Tinggi piramida:</label>
+        <input style="border-color: orange;" type="text" id="tinggiPyramid"><br>
+        <button onclick="pyramid()">Proses</button>
+    </div>
+    
+    <div class="kotakPyramid" id="hasilPyramid"></div>
+
+    <script>
+        function pyramid(){
+            let tinggi = parseInt(document.getElementById('tinggiPyramid').value);
+            let hasil = document.getElementById('hasilPyramid');
+            hasil.innerHTML = '';
+
+            let lebarSel = 800 / (2 * tinggi + 1);
+            if(lebarSel > 30){
+                lebarSel = 30;
+            }
+
+            let tinggiSel = lebarSel * 1.5;
+
+            let tabel = '<table>';
+            for(let baris = 0; baris < tinggi; baris++){
+                tabel += '<tr>';
+                let jumlahSel = 2 * baris + 1;
+                let jumlahSpasi = tinggi - baris - 1;
+
+                for(let spasi = 0; spasi < jumlahSpasi; spasi++){
+                    tabel += '<td style="width: ' + lebarSel + 'px;"></td>';
+                }
+
+                for(let sel = 0; sel < jumlahSel; sel++){
+                    tabel += '<td class="selPyramid" style="width: ' + lebarSel + 'px; height: ' + tinggiSel + 'px;"></td>';
+                }
+
+                for(let spasi = 0; spasi < jumlahSpasi; spasi++){
+                    tabel += '<td style="width: ' + lebarSel + 'px;"></td>';
+                }
+
+                tabel += '</tr>';
+            }
+            tabel += '</table>';
+            hasil.innerHTML = tabel;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+    <style>
+        table{
+            border: 1px solid black;
+        }
+
+        td{
+            border: 1px solid black;
+            padding: 0;
+            margin: 0;
+            width: 20px;
+            height: 35px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>x</td>
+            <td id="angka1"></td>
+            <td>=</td>
+            <td id="hasil1"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>x</td>
+            <td id="angka2"></td>
+            <td>=</td>
+            <td id="hasil2"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>x</td>
+            <td id="angka3"></td>
+            <td>=</td>
+            <td id="hasil3"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>x</td>
+            <td id="angka4"></td>
+            <td>=</td>
+            <td id="hasil4"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>x</td>
+            <td id="angka5"></td>
+            <td>=</td>
+            <td id="hasil5"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>x</td>
+            <td id="angka6"></td>
+            <td>=</td>
+            <td id="hasil6"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>x</td>
+            <td id="angka7"></td>
+            <td>=</td>
+            <td id="hasil7"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>x</td>
+            <td id="angka8"></td>
+            <td>=</td>
+            <td id="hasil8"></td>
+        </tr>
+    </table>
+
+    <script>
+        function inputPrompt(){
+            let angka;
+
+            while(true){
+                angka = prompt("A number?");
+                if(angka !== null && !isNaN(angka)){
+                    angka = parseInt(angka);
+                    break;
+                }else{
+                    alert("Input tidak valid. Masukkan angka lagi.");
+                }
+            }
+
+            updateTabel(angka);
+        }
+
+        function updateTabel(angka){
+            document.getElementById("angka1").textContent = angka;
+            document.getElementById("hasil1").textContent = 1 * angka;
+
+            document.getElementById("angka2").textContent = angka;
+            document.getElementById("hasil2").textContent = 2 * angka;
+
+            document.getElementById("angka3").textContent = angka;
+            document.getElementById("hasil3").textContent = 3 * angka;
+
+            document.getElementById("angka4").textContent = angka;
+            document.getElementById("hasil4").textContent = 4 * angka;
+
+            document.getElementById("angka5").textContent = angka;
+            document.getElementById("hasil5").textContent = 5 * angka;
+
+            document.getElementById("angka6").textContent = angka;
+            document.getElementById("hasil6").textContent = 6 * angka;
+
+            document.getElementById("angka7").textContent = angka;
+            document.getElementById("hasil7").textContent = 7 * angka;
+
+            document.getElementById("angka8").textContent = angka;
+            document.getElementById("hasil8").textContent = 8 * angka;
+        }
+        inputPrompt();
+    </script>
+</body>
+</html>

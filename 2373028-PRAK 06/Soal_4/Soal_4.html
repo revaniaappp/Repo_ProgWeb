@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background-color: #f5f5f5;
+        }
+        
+        table{
+            width: 350px;
+            background-color: white;
+            border: 1px solid gray;
+        }
+        
+        table td{
+            border: 1px solid gray;
+            padding: 8px;
+        }
+        
+        label{
+            color: blue;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        input{
+            width: 75%;
+            height: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+        
+        select{
+            width: 50%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+        
+        button{
+            padding: 5px 5px;
+            margin-right: 5px;
+            border: 1px solid #aaa;
+            color: blue;
+            font-weight: bold;
+            border-radius: 3px;
+
+            font-size: 12px;
+        }
+        
+        button:hover{
+            border: 2px solid #76dff8;
+        }
+        
+        .center{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <label style="float: right;" for="inputan">Input :</label>
+            </td>
+            <td>
+                <input type="text" id="inputan">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label style="float: right;" for="outputAngka">Output :</label>
+            </td>
+            <td>
+                <input style="color: dimgray;" type="text" id="outputAngka" >
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="center">
+                <select id="pilihan">
+                    <option value="decimalBiner">decimal-biner</option>
+                    <option value="binerDesimal">biner-decimal</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="center">
+                <button type="button" onclick="convert()">PROSES</button>
+                <button type="button" onclick="reset()">RESET</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        document.getElementById('pilihan').addEventListener('change', function(){
+            reset();
+        });
+    
+        function validasiBiner(input){
+            if(input.length !== 8){
+                return false;
+            }
+            for(let i = 0; i < input.length; i++){
+                if (input[i] !== '0' && input[i] !== '1') {
+                    return false;
+                }
+            }
+            return true;
+        }
+    
+        function convert(){
+            let pilihan = document.getElementById('pilihan').value;
+            let inputan = document.getElementById('inputan').value.trim();
+            let output = document.getElementById('outputAngka');
+    
+            if(pilihan === 'decimalBiner'){
+                if(!inputan || isNaN(inputan) || parseInt(inputan) < 0 || parseInt(inputan) > 255){
+                    output.value = '';
+                    return;
+                }
+    
+                let decimal = parseInt(inputan);
+                let binary = '';
+    
+                if(decimal === 0){
+                    binary = '00000000';
+                }else{
+                    while (decimal > 0) {
+                        let sisaBagi = decimal % 2;
+                        binary = sisaBagi + binary;
+                        decimal = Math.floor(decimal / 2);
+                    }
+                    binary = binary.padStart(8, '0');
+                }
+    
+                output.value = binary;
+    
+            }else{
+                if (!validasiBiner(inputan)){
+                    output.value = '';
+                    return;
+                }
+    
+                let decimal = 0;
+    
+                for(let i = 0; i < inputan.length; i++){
+                    let position = inputan.length - 1 - i;
+                    let angkaBiner = parseInt(inputan[i]);
+                    decimal += angkaBiner * Math.pow(2, position);
+                }
+
+                output.value = decimal;
+            }
+        }
+    
+        function reset(){
+            document.getElementById('inputan').value = '';
+            document.getElementById('outputAngka').value = '';
+        }
+    </script>
+</body>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
