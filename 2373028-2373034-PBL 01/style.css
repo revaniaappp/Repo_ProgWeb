@@ -1,0 +1,600 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f5f1;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* untuk header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.kontainerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e74c3c;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    padding: 0.5rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e74c3c;
+}
+
+.kontainerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: #2c3e50;
+}
+
+.headerKanan {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.searchBar {
+    position: relative;
+}
+
+.searchBar input {
+    padding: 0.5rem 2rem 0.5rem 0.8rem;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    font-size: 1rem;
+}
+
+.iconSearch {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.wishlistIcon {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.wishlistIcon a {
+    margin-left: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.wishlistIcon a:hover {
+    color: #e74c3c;
+}
+
+/* untuk footer */
+footer {
+    background-color: #1a252f;
+    color: #ecf0f1;
+    padding: 3rem 5% 1rem;
+}
+
+.footerKontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.kolomFooter h3 {
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.kolomFooter h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #e74c3c;
+}
+
+.kolomFooter ul {
+    list-style: none;
+}
+
+.kolomFooter ul li {
+    margin-bottom: 0.5rem;
+}
+
+.kolomFooter ul li a:hover {
+    color: #e74c3c;
+}
+
+.iconSocmed {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.iconSocmed a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #2c3e50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.iconSocmed a:hover {
+    background-color: #e74c3c;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #34495e;
+    font-size: 0.9rem;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .kontainerHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin: 1rem 0;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-right: 1rem;
+    }
+
+    .bannerSection h1 {
+        font-size: 2rem;
+    }
+}
+
+/* untuk bannerSection  */
+.bannerSection {
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bannerSection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bannerSection-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 0 5%;
+    max-width: 600px;
+}
+
+.bannerSection h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bannerSection p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.btnEksplore {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.btnEksplore:hover {
+    background-color: #c0392b;
+}
+
+/* untuk featured books */
+.featuredBooks {
+    padding: 3rem 5%;
+}
+
+.judulSection {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+    font-size: 2rem;
+}
+
+.judulSection::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #e74c3c;
+    margin: 0.5rem auto;
+}
+
+.gridBuku {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.kotakBuku {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.kotakBuku:hover {
+    transform: translateY(-5px);
+}
+
+.kotakBuku img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.infoBuku {
+    padding: 1.5rem;
+}
+
+.judulBuku {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.penulisBuku {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.deskripsiBuku {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.ratingBuku {
+    color: #f39c12;
+    margin-bottom: 0.5rem;
+}
+
+.hargaBuku {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+}
+
+.stokBuku {
+    font-size: 0.9rem;
+    color: #4CAF50;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+.tambahkanKeranjang {
+    background-color: #2c3e50;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.tambahkanKeranjang:hover {
+    background-color: #1a2530;
+}
+
+/* untuk categories */
+.categories {
+    background-color: #ecf0f1;
+    padding: 3rem 5%;
+}
+
+.categories-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.kotakKategori {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s;
+}
+
+.kotakKategori i {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.kotakKategori h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* untuk 4 kategori buku */
+.bannerKategori {
+    background-color: #384d61;
+    color: white;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.bannerKategori h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.bannerKategori p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.kontainerBuku {
+    padding: 2rem 5%;
+}
+
+.gridBuku {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.kotakBuku {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.coverBuku {
+    height: 300px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.coverBuku img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.detailBuku {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.judulBuku {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.penulisBuku {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.hargaBuku {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.ratingBuku {
+    color: #f39c12;
+    margin-bottom: 0.5rem;
+}
+
+.aksiBuku {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.tambahKeranjang {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-grow: 1;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.tambahKeranjang:hover {
+    background-color: #c0392b;
+}
+
+.btnWishlist {
+    width: 40px;
+    height: 40px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: #333;
+}
+
+.btnWishlist:hover {
+    background-color: #f5e0e0;
+    border-color: #e74c3c;
+    color: #e74c3c;
+}
+
+/* untuk kategori di home*/
+.headerKategori {
+    background-color: #384d61;
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.headerKategori h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.headerKategori p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.gridKategori {
+    padding: 3rem 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.kotakKategori {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.kotakKategori:hover {
+    transform: translateY(-5px);
+}
+
+.iconKategori {
+    height: 200px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconKategori i {
+    font-size: 4rem;
+    color: #e74c3c;
+}
+
+.kategoriKonten {
+    padding: 1.5rem;
+}
+
+.kategoriKonten h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.kategoriKonten p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.btnEksplor {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btnEksplor:hover {
+    background-color: #c0392b;
+}

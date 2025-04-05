@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .kontainerCart {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        .cartItem {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 1em 0;
+            gap: 1em;
+        }
+
+        .cartItem:last-child {
+            border-bottom: none;
+        }
+
+        .cartItem input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #28a745;
+        }
+
+        .cartItem img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .infoItem {
+            flex: 1;
+        }
+
+        .infoItem h3 {
+            margin: 0 0 0.3em;
+        }
+
+        .infoItem p {
+            margin: 0.2em 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .kuantitas {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .kuantitas button {
+            padding: 5px 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .kuantitas span {
+            font-weight: bold;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 2em;
+        }
+
+        .btnCheckout {
+            display: block;
+            margin-left: auto;
+            margin-top: 1em;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="kontainerHeader">
+            <div class="logo">Paper<span>Nest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="headerKanan">
+                <div class="searchBar">
+                    <input type="text" placeholder="Search books...">
+                    <a href=""><span class="iconSearch">🔍</span></a>
+                </div>
+                <div class="iconCart" id="iconCart">
+                    <a href="cart.html">🛒</a>
+                    <span class="cartCount" id="cartCount">2</span>
+                </div>
+                <div class="wishlistIcon">
+                    <a href="wishlist.html" class="wishlist-link">❤️</a>
+                </div>
+                <div class="loginIcon">
+                    <a href="loginRegister.html" class="loginRegister">🧑🏻‍💼</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <div class="kontainerCart">
+        <h1>Shopping Cart</h1>
+
+        <div class="cartItem">
+            <input type="checkbox" checked>
+            <img src="/img/seven.jpg" alt="Buku A">
+            <div class="infoItem">
+                <h3>The Seven Husbands of Evelyn Hugo</h3>
+                <p>Price: Rp98.000</p>
+                <div class="kuantitas">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cartItem">
+            <input type="checkbox">
+            <img src="/img/atomic.jpg" alt="Buku B">
+            <div class="infoItem">
+                <h3>Atomic Habit</h3>
+                <p>Price: Rp75.000</p>
+                <div class="kuantitas">
+                    <button>-</button>
+                    <span>2</span>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="total">
+            Total: Rp200.000
+        </div>
+
+        <a href="checkout.html" class="btnCheckout">Checkout</a>
+    </div>
+
+    <footer>
+        <div class="footerKontainer">
+            <div class="kolomFooter">
+                <h3>About PaperNest</h3>
+                <p>Your haven for books and a community for passionate readers.</p>
+                <div class="iconSocmed">
+                    <a href="https://www.facebook.com/universitaskristenmaranathaofficial">f</a>
+                    <a href="https://x.com/ukm_official?s=11">t</a>
+                    <a href="https://www.linkedin.com/in/jesye-octavia-nainggolan/">in</a>
+                    <a href="https://www.instagram.com/revaniaapp/">ig</a>
+                </div>
+            </div>
+            <div class="kolomFooter">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html#faq">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="kolomFooter">
+                <h3>My Account</h3>
+                <ul>
+                    <li><a href="loginRegister.html">Login / Register</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="cart.html">My Cart</a></li>
+                </ul>
+            </div>
+            <div class="kolomFooter">
+                <h3>Store Locations</h3>
+                <p>
+                    PaperNest Bookstore<br>
+                    Jl. Surya Sumantri No.65<br>
+                    Phone: +62 8111 200 6543<br>
+                    Email: papernest@gmail.com
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 PaperNest. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

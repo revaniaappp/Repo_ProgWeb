@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .checkoutContainer {
+            max-width: 900px;
+            margin: 3em auto;
+            padding: 2em;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 2em;
+        }
+
+        .orderDetails {
+            margin-bottom: 2em;
+        }
+
+        .orderDetails p {
+            margin: 0.5em 0;
+        }
+
+        .productList {
+            border-top: 1px solid #ddd;
+            margin-top: 1em;
+            padding-top: 1em;
+        }
+
+        .productItem {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1em;
+        }
+
+        .productItem span {
+            width: 33%;
+        }
+
+        .paymentSection {
+            margin-top: 2em;
+        }
+
+        .totalAmount {
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .btnConfirm {
+            margin-top: 2em;
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="kontainerHeader">
+            <div class="logo">Paper<span>Nest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="headerKanan">
+                <div class="searchBar">
+                    <input type="text" placeholder="Search books...">
+                    <a href=""><span class="iconSearch">🔍</span></a>
+                </div>
+                <div class="iconCart" id="iconCart">
+                    <a href="cart.html">🛒</a>
+                    <span class="cartCount" id="cartCount">2</span>
+                </div>
+                <div class="wishlistIcon">
+                    <a href="wishlist.html" class="wishlist-link">❤️</a>
+                </div>
+                <div class="loginIcon">
+                    <a href="loginRegister.html" class="loginRegister">🧑🏻‍💼</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <div class="checkoutContainer">
+        <h1>Checkout</h1>
+
+        <div class="orderDetails">
+            <p><strong>Order ID:</strong> ORD202504051234</p>
+            <p><strong>Customer ID:</strong> CUST123456</p>
+            <p><strong>Order Date:</strong> April 5, 2025</p>
+            <p><strong>Status:</strong> Pending Payment</p>
+        </div>
+
+        <div class="productList">
+            <div class="productItem">
+                <span><strong>Book ID</strong></span>
+                <span><strong>Product</strong></span>
+                <span><strong>Quantity</strong></span>
+                <span><strong>Price</strong></span>
+            </div>
+            <div class="productItem">
+                <span>BK001</span>
+                <span>The Seven Husbands of Evelyn Hugo</span>
+                <span>1</span>
+                <span>Rp98.000</span>
+            </div>
+            <div class="productItem">
+                <span>BK002</span>
+                <span>Atomic Habit</span>
+                <span>2</span>
+                <span>Rp150.000</span>
+            </div>
+        </div>
+
+        <div class="paymentSection">
+            <p><strong>Payment Method:</strong></p>
+            <select>
+                <option value="transfer">Bank Transfer</option>
+                <option value="cod">Cash on Delivery</option>
+                <option value="ewallet">E-Wallet</option>
+                <option value="creditcard">Credit Card</option>
+            </select>
+        </div>
+
+        <div class="totalAmount">
+            Total Amount: Rp248.000
+        </div>
+        <p><strong>Status:</strong> Waiting for Payment</p>
+
+        <a href="confirmOrder.html"><button class="btnConfirm">Confirm Order</button></a>
+    </div>
+
+    <footer>
+        <div class="footerKontainer">
+            <div class="kolomFooter">
+                <h3>About PaperNest</h3>
+                <p>Your haven for books and a community for passionate readers.</p>
+                <div class="iconSocmed">
+                    <a href="https://www.facebook.com/universitaskristenmaranathaofficial">f</a>
+                    <a href="https://x.com/ukm_official?s=11">t</a>
+                    <a href="https://www.linkedin.com/in/jesye-octavia-nainggolan/">in</a>
+                    <a href="https://www.instagram.com/revaniaapp/">ig</a>
+                </div>
+            </div>
+            <div class="kolomFooter">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html#faq">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="kolomFooter">
+                <h3>My Account</h3>
+                <ul>
+                    <li><a href="loginRegister.html">Login / Register</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="cart.html">My Cart</a></li>
+                </ul>
+            </div>
+            <div class="kolomFooter">
+                <h3>Store Locations</h3>
+                <p>
+                    PaperNest Bookstore<br>
+                    Jl. Surya Sumantri No.65<br>
+                    Phone: +62 8111 200 6543<br>
+                    Email: papernest@gmail.com
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 PaperNest. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

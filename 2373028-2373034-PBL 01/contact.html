@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f5f1;
+            color: #333;
+        }
+
+        .contactSection {
+            padding: 3rem 5%;
+        }
+
+        .sectionTitle {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .contactGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contactCard {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .whatsappButton {
+            background-color: #25D366;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .whatsappButton:hover {
+            transform: translateY(-5px);
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .faq {
+            margin-top: 3rem;
+        }
+
+        .faqItem {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        .faqItem:hover {
+            transform: translateY(-5px);
+        }
+
+        .faqItem summary {
+            background-color: #fff;
+            padding: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            list-style: none;
+            color: #2c3e50;
+        }
+
+        .faqItem summary::after {
+            content: "\25BC";
+            float: right;
+            transition: transform 0.3s ease;
+        }
+
+        .faqItem[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .faqItem p {
+            padding: 0 1rem 1rem 1rem;
+            margin: 0;
+            background-color: #fafafa;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="kontainerHeader">
+            <div class="logo">Paper<span>Nest</span></div>
+            <nav>
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="headerKanan">
+                <div class="searchBar">
+                    <input type="text" placeholder="Search books...">
+                    <a href=""><span class="iconSearch">🔍</span></a>
+                </div>
+                <div class="iconCart" id="iconCart">
+                    <a href="cart.html">🛒</a>
+                    <span class="cartCount" id="cartCount">2</span>
+                </div>
+                <div class="wishlistIcon">
+                    <a href="wishlist.html" class="wishlistLink">❤️</a>
+                </div>
+                <div class="loginIcon">
+                    <a href="loginRegister.html" class="loginRegister">🧑🏻‍💼</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="contactSection" id="contact-top">
+        <h2 class="sectionTitle">Contact</h2>
+        <div class="contactGrid">
+            <div class="contactCard">
+                <h3>Chat with Us</h3>
+                <p>Need help? Reach out via WhatsApp and our team will respond shortly.</p>
+                <a class="whatsappButton" href="https://wa.me/6281112006543" target="_blank">Message on WhatsApp</a>
+            </div>
+            <div class="contactCard">
+                <h3>Visit Our Store</h3>
+                <p>Jl. Surya Sumantri No.65</p>
+                <p>Phone: +62 8111 200 6543</p>
+                <p>Email: papernest@gmail.com</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.039918534067!2d107.57847567499613!3d-6.885822093113164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6873a8cf5a7%3A0xf8f474dec4efb56!2sUniversitas%20Kristen%20Maranatha!5e0!3m2!1sen!2sid!4v1743778282414!5m2!1sen!2sid"
+                    allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+
+        <section class="faq" id="faq">
+            <h2 class="sectionTitle">FAQs</h2>
+            <div class="faqContainer">
+                <details class="faqItem">
+                    <summary>What payment methods do you accept?</summary>
+                    <p>We accept bank transfer, e-wallet, Cash on Delivery, and Credit Card.</p>
+                </details>
+                <details class="faqItem">
+                    <summary>How long does shipping take?</summary>
+                    <p>Delivery takes 1-5 business days depending on your location.</p>
+                </details>
+                <details class="faqItem">
+                    <summary>Do you offer cash on delivery?</summary>
+                    <p>Of course!!</p>
+                </details>
+                <details class="faqItem">
+                    <summary>Can I return a book?</summary>
+                    <p>Yes, within 3 days of delivery in good condition.</p>
+                </details>
+                <details class="faqItem">
+                    <summary>Do you sell e-books?</summary>
+                    <p>Some books are available in digital format.</p>
+                </details>
+                <details class="faqItem">
+                    <summary>Can I buy in bulk?</summary>
+                    <p>Absolutely! Contact us for bulk purchase discounts.</p>
+                </details>
+                <details class="faqItem">
+                    <summary>What if I ordered the wrong book?</summary>
+                    <p>Please contact us immediately to cancel or change your order.</p>
+                </details>
+                <details class="faqItem">
+                    <summary>When is your customer support available?</summary>
+                    <p>Monday–Friday, 9 AM–5 PM (WIB).</p>
+                </details>
+                <details class="faqItem">
+                    <summary>Are your books original?</summary>
+                    <p>Yes, all our books are 100% original and official.</p>
+                </details>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="footerKontainer">
+            <div class="kolomFooter">
+                <h3>About PaperNest</h3>
+                <p>Your haven for books and a community for passionate readers.</p>
+                <div class="iconSocmed">
+                    <a href="https://www.facebook.com/universitaskristenmaranathaofficial">f</a>
+                    <a href="https://x.com/ukm_official?s=11">t</a>
+                    <a href="https://www.linkedin.com/in/jesye-octavia-nainggolan/">in</a>
+                    <a href="https://www.instagram.com/revaniaapp/">ig</a>
+                </div>
+            </div>
+            <div class="kolomFooter">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="contact.html#faq">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="kolomFooter">
+                <h3>My Account</h3>
+                <ul>
+                    <li><a href="loginRegister.html">Login / Register</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="cart.html">My Cart</a></li>
+                </ul>
+            </div>
+            <div class="kolomFooter">
+                <h3>Store Locations</h3>
+                <p>
+                    PaperNest Bookstore<br>
+                    Jl. Surya Sumantri No.65<br>
+                    Phone: +62 8111 200 6543<br>
+                    Email: papernest@gmail.com
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 PaperNest. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
