@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2373028-Revania Amelia Putri</title>
+    <style>
+        textarea{
+            overflow-y: scroll;
+            height: 70px;
+            width: 200px;
+            resize: none;
+        }
+
+        #txt2{
+            text-align: right;
+            font-size: 12px;
+            color: black;
+            border: 1px solid lightgray;
+            padding: 2px 6px;
+            width: 40px;
+            border-radius: 3px;
+            background-color: #f9f9f9;
+            margin-top: 3px;
+        }
+
+        .txtarea{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Judul</td>
+            <td>:</td>
+            <td><input type="text" style="width: 200px;"></td>
+        </tr>
+        <tr>
+            <td>Deskripsi</td>
+            <td>:</td>
+            <td>
+                <div class="txtarea">
+                    <textarea id="deskripsi"></textarea>
+                    <input type="text" id="txt2" readonly value="0/256">
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function call_onKeyPress(ob){
+            var obval = ob.value;
+            if (obval.length > 256){
+                ob.value = obval.substr(0, 256);
+                obval = ob.value;
+            }
+            document.getElementById("txt2").value = obval.length + "/256";
+        }
+
+        const textarea = document.getElementById("deskripsi");
+        textarea.addEventListener("keyup", function (){
+            call_onKeyPress(this);
+        });
+        textarea.addEventListener("keydown", function (){
+            call_onKeyPress(this);
+        });
+    </script>
+</body>
+</html>

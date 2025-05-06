@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2373028-Revania Amelia Putri</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+
+        td, tr{
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .biru{
+            background-color: #B3CCFF;
+        }
+
+        .krem{
+            background-color: #FFD9B3;
+        }
+
+        .hovered{
+            background-color: #CCFFAA;
+        }
+
+        .header{
+            background-color: #A9C2C2;
+        }
+    </style>
+</head>
+<body>
+    <table id="tabel">
+        <tr class="header">
+            <td>Position</td>
+            <td>Programming Language</td>
+            <td>Ratings</td>
+        </tr>
+        <tr class="biru">
+            <td>1</td>
+            <td>C</td>
+            <td>18.058%</td>
+        </tr>
+        <tr class="krem">
+            <td>2</td>
+            <td>Java</td>
+            <td>18.051%</td>
+        </tr>
+        <tr class="biru">
+            <td>3</td>
+            <td>C++</td>
+            <td>9.707%</td>
+        </tr>
+        <tr class="krem">
+            <td>4</td>
+            <td>PHP</td>
+            <td>9.662%</td>
+        </tr>
+        <tr class="biru">
+            <td>5</td>
+            <td>(Visual) Basic</td>
+            <td>6.392%</td>
+        </tr>
+    </table>
+
+    <script>
+        var baris = document.querySelectorAll("#tabel tr:not(.header)");
+        var classAwal = [];
+
+        for (var i = 0; i < baris.length; i++){
+            classAwal[i] = baris[i].className;
+
+            baris[i].onmouseover = function (){
+                this.className = "hovered";
+            }
+
+            baris[i].onmouseout = function (){
+                var index = Array.from(baris).indexOf(this);
+                this.className = classAwal[index];
+            }
+        }
+    </script>
+</body>
+</html>

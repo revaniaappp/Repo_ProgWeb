@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2373028-Revania Amelia Putri</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Data</td>
+            <td><input type="text" id="data"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="addData()">Add</button>
+            </td>
+            <td>
+                <select id="pilihOperasi" onchange="hitung()">
+                    <option value="pilih">Pilih Operasi</option>
+                    <option value="display">Display</option>
+                    <option value="count">Count</option>
+                    <option value="sum">Sum</option>
+                    <option value="avg">Average</option>
+                    <option value="max">Max</option>
+                    <option value="min">Min</option>
+                    <option value="ganjil">Ganjil</option>
+                    <option value="genap">Genap</option>
+                    <option value="hapus">Hapus</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Hasil</td>
+            <td><input type="text" id="hasilOutput" readonly></td>
+        </tr>
+    </table>
+
+    <script>
+        var data = [];
+
+        function addData(){
+            var input = document.getElementById('data');
+            var angka = input.value;
+
+            if (angka !== "" && !isNaN(angka)){
+                data.push(Number(angka));
+                input.value = "";
+            }
+        }
+
+        function hitung(){
+            var pilihan = document.getElementById('pilihOperasi').value;
+            var hasil = document.getElementById('hasilOutput');
+            var output = "";
+
+            if (pilihan === "display"){
+                output = data.join(", ");
+            }
+            else if (pilihan === "count"){
+                output = data.length;
+            }
+            else if (pilihan === "sum"){
+                var sum = 0;
+                for (var i = 0; i < data.length; i++){
+                    sum += data[i];
+                }
+                output = sum;
+            }
+            else if (pilihan === "avg"){
+                var sum = 0;
+                for (var i = 0; i < data.length; i++){
+                    sum += data[i];
+                }
+                output = (sum / data.length).toFixed(2);
+            }
+            else if (pilihan === "max"){
+                if (data.length > 0) {
+                    var max = data[0];
+                    for (var i = 1; i < data.length; i++){
+                        if (data[i] > max) {
+                            max = data[i];
+                        }
+                    }
+                    output = max;
+                }
+            }
+            else if (pilihan === "min"){
+                if (data.length > 0) {
+                    var min = data[0];
+                    for (var i = 1; i < data.length; i++){
+                        if (data[i] < min) {
+                            min = data[i];
+                        }
+                    }
+                    output = min;
+                }
+            }
+            else if (pilihan === "ganjil"){
+                var ganjil = [];
+                for (var i = 0; i < data.length; i++){
+                    if (data[i] % 2 === 1) {
+                        ganjil.push(data[i]);
+                    }
+                }
+                output = ganjil.join(", ");
+            }
+            else if (pilihan === "genap"){
+                var genap = [];
+                for (var i = 0; i < data.length; i++){
+                    if (data[i] % 2 === 0){
+                        genap.push(data[i]);
+                    }
+                }
+                output = genap.join(", ");
+            }
+            else if (pilihan === "hapus"){
+                data = [];
+                output = "";
+            }
+
+            hasil.value = output;
+            document.getElementById('pilihOperasi').value = "pilih";
+        }
+    </script>
+</body>
+</html>
