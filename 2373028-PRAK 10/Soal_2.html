@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+    <script type="text/javascript" src="jquery.js"></script>
+</head>
+<style>
+    .underline{
+        text-decoration: underline;
+    }
+</style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="inputNama">
+            </td>
+            <td>
+                <button id="add">Add</button>
+            </td>
+            <td>
+                <button id="searchBtn">Search</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div id="inputNamaList">
+                    <div>John Resig</div>
+                    <div>George Martin</div>
+                    <div>Malcom John Sinclair</div>
+                    <div>J. Ohn</div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function (){
+            $('#add').click(function (){
+                let inputNama = $('#inputNama').val();
+                if (inputNama.trim() !== ''){
+                    $('<div>' + inputNama + '</div>').appendTo('#inputNamaList');
+                    $('#inputNama').val('');
+                }
+            });
+
+            $('#searchBtn').click(function (){
+                let keyword = $('#inputNama').val();
+                $('#inputNamaList div').removeClass('underline');
+                if (keyword !== ''){
+                    $('#inputNamaList div:contains("' + keyword + '")').addClass('underline');
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

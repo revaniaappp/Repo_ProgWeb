@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="50" align="center">
+                <input class="header" type="checkbox" /><br />
+                <hr/>
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+            </td>
+        </tr>
+    </table>
+    <script>
+        $(document).ready(function(){
+            $("input:checkbox.header").click(function(){
+                var flag = $(this).prop("checked");
+                if(flag){
+                    $("input:checkbox.body").prop("checked", true);
+                }else{
+                    $("input:checkbox.body").prop("checked", false);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

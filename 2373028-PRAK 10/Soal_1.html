@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+        }
+
+        ol{
+            padding: 0;
+            margin: 20px;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        .menu{
+            display: flex;
+        }
+
+        .item{
+            background-color: rgb(214, 56, 135);
+            color: white;
+            text-align: left;
+            width: 150px;
+            margin-right: 5px;
+            position: relative;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .submenu{
+            background-color: white;
+            border: 2px solid rgb(214, 56, 135);
+            padding: 5px;
+            width: 150px;
+            display: none;
+            color: black;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            box-sizing: border-box;
+            font-weight: normal;
+        }
+
+        .submenu li{
+            color: black;
+            text-align: left;
+            text-decoration: underline;
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <ol class="menu">
+        <li class="item">
+            jQuery
+            <ol class="submenu">
+                <li>Download</li>
+                <li>Documentation</li>
+                <li>Blog</li>
+            </ol>
+        </li>
+        <li class="item">
+            Community
+            <ol class="submenu">
+                <li>Mailing List</li>
+                <li>Tutorials</li>
+                <li>Demos</li>
+                <li>Plugins</li>
+            </ol>
+        </li>
+        <li class="item">
+            Development
+            <ol class="submenu">
+                <li>Source Code</li>
+                <li>Bug Tracking</li>
+                <li>Recent Changes</li>
+            </ol>
+        </li>
+    </ol>
+
+    <script>
+        $(document).ready(function (){
+            $(".submenu").hide();
+    
+            $(".item").hover(
+                function (){
+                    $(this).find(".submenu").show();
+                },
+                function (){
+                    $(this).find(".submenu").hide();
+                }
+            );
+        });
+    </script>
+</body>
+</html>
