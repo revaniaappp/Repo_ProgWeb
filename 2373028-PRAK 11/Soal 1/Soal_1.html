@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2373028-Revania Amelia Putri</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+
+        thead{
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        td, th{
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .td{
+            border: 1px solid black;
+            width: 275px;
+            padding: 10px;
+        }
+    </style>
+
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#searchBtn").click(function(){
+                let radioBtn = $(":radio[name='kelas']:checked").val();
+                let url = "";
+
+                if(radioBtn === "A"){
+                    url = "nilaiA.json";
+                }else if(radioBtn === "B"){
+                    url = "nilaiB.json";
+                }else{
+                    url = "nilai.json";
+                }
+
+                $.getJSON(url, function(data){
+                    $("#myTable tbody").remove();
+
+                    let tbody = "<tbody>";
+
+                    for (let i = 0; i < data.nilai.length; i++){
+                        tbody += "<tr>" +
+                            "<td>" + data.nilai[i].nrp + "</td>" +
+                            "<td>" + data.nilai[i].nama + "</td>" +
+                            "<td>" + data.nilai[i].kelas + "</td>" +
+                            "<td>" + data.nilai[i].nilaiakhir + "</td>" +
+                            "</tr>";
+                    }
+
+                    tbody += "</tbody>";
+
+                    $("#myTable").append(tbody);
+                    $("#myTable tbody tr:even").css("background-color", "#FFFFCC");
+                    $("#myTable tbody tr:odd").css("background-color", "#CCFFAA");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h3>Selamat! Berikut adalah Daftar Mahasiswa yang mendapat <br> 
+        Nilai A Pemrograman Web SI Tahun Ajaran 2023/2024</h3>
+    <table>
+        <tr>
+            <td class="td">
+                <label><input type="radio" name="kelas" value="all" checked> All</label><br>
+                <label><input type="radio" name="kelas" value="A"> Kelas A</label><br>
+                <label><input type="radio" name="kelas" value="B"> Kelas B</label><br>
+                <input type="button" id="searchBtn" value="Search">
+            </td>
+        </tr>
+    </table><br>
+    <table id="myTable" border="1">
+        <thead>
+            <tr>
+                <th>NRP</th>
+                <th>NAMA</th>
+                <th>KELAS</th>
+                <th>NILAI AKHIR</th>
+            </tr>
+        </thead>
+    </table>
+</body>
+</html>

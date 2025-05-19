@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373028-Revania Amelia Putri</title>
+    <style>
+        table, tr, td{
+            border: 1px solid black;
+            width: 50%;
+            height: 100%;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('input[type="button"]').click(function(){
+                $.getJSON("SIJson.txt", function(data){
+                    let judulHTML = `<h1><a href="${data.link}" target="_blank">${data.title}</a></h1>`;
+                    let generatorHTML = data.generator;
+
+                    let isiContent = "";
+                    for(let i = 0; i < data.items.length; i++){
+                        let item = data.items[i];
+                        isiContent += `
+                            <p>
+                                <b><a href="${item.link}" target="_blank">${item.title}</a></b><br>
+                                <i>By : ${item.author} - ${item.published}</i><br><br>
+                                ${item.description}<br><br>
+                                Universitas : <a href="${item.universitas.m}" target="_blank">Click Here</a><br>
+                                Tag(s) : ${item.tags}
+                            </p>
+                            <hr>
+                        `;
+                    }
+
+                    $("#myTable").html(`
+                        <tr><td>${judulHTML}</td></tr>
+                        <tr><td>${isiContent}</td></tr>
+                        <tr><td>${generatorHTML}</td></tr>
+                    `);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <table id="myTable">
+        <tr>
+            <td>Title</td>
+        </tr>
+        <tr>
+            <td>Content</td>
+        </tr>
+        <tr>
+            <td>Generator</td>
+        </tr>
+    </table>
+    <br>
+    <input type="button" value="Look">
+</body>
+</html>
